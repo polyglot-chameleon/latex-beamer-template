@@ -8,6 +8,10 @@ main.pdf
 **/*.toc
 **/*.fmt
 **/*.fot
+**/*.bcf
+**/*.nav
+**/*.snm
+**/*.run.xml
 **/*.cb
 **/*.cb2
 **/*.lb
