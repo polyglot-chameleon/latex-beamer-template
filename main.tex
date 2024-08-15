@@ -1,0 +1,34 @@
+\documentclass{beamer}
+
+\include{setup}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[your short title]{your title}
+\subtitle{your subtitle}
+\author{\href{}{your author}}
+\institute[your abbrv]{your organisation}
+
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{TOC}
+    \tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Content %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{sections/01_motivation}
+\include{sections/02_definition}
+\include{sections/03_methodology}
+\include{sections/04_results}
+\include{sections/05_discussion}
+
+\nocite{*}
+
+\begin{frame}[allowframebreaks]{References}
+    \printbibliography
+\end{frame}
+
+\end{document}

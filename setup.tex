@@ -1,0 +1,54 @@
+\usepackage[utf8]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BIB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[style=apa, citestyle=authoryear, backend=biber,natbib]{biblatex}
+
+\addbibresource{references.bib}
+\AtBeginBibliography{\scriptsize}
+
+\setbeamertemplate{bibliography item}{%
+    \ifboolexpr{ test {\ifentrytype{book}} or test {\ifentrytype{mvbook}}
+        or test {\ifentrytype{collection}} or test {\ifentrytype{mvcollection}}
+        or test {\ifentrytype{reference}} or test {\ifentrytype{mvreference}} }
+    {\setbeamertemplate{bibliography item}[book]}
+    {\ifentrytype{misc}
+        {\setbeamertemplate{bibliography item}[online]}
+        {\setbeamertemplate{bibliography item}[article]}}%
+    \usebeamertemplate{bibliography item}}
+
+\defbibenvironment{bibliography}
+{\list{}
+    {\settowidth{\labelwidth}{\usebeamertemplate{bibliography item}}%
+        \setlength{\leftmargin}{\labelwidth}%
+        \setlength{\labelsep}{\biblabelsep}%
+        \addtolength{\leftmargin}{\labelsep}%
+        \setlength{\itemsep}{\bibitemsep}%
+        \setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\item}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Custom Theme %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usetheme{AnnArbor}
+\useoutertheme[subsection=false]{smoothbars}
+\useinnertheme{circles}
+
+\newcommand\hl[1]
+{\textbf{\textcolor{violet!80}{#1}}}
+
+\definecolor{bluepurple}{rgb}{.5, 0, .4}
+\definecolor{cream}{rgb}{1, .99, .95}
+
+\setbeamercolor*{title}{bg=structure.fg!80, fg=cream}
+
+\setbeamercolor{section in head/foot}{bg=bluepurple!50, fg=cream}
+\setbeamercolor{title in head/foot}{bg=bluepurple!50, fg=cream}
+
+\setbeamercolor*{date in head/foot}{use=structure,fg=cream,bg=structure.fg!70}
+\setbeamercolor*{author in head/foot}{use=structure,fg=cream,bg=structure.fg!70}
+\setbeamercolor*{palette tertiary}{use=structure,fg=cream,bg=bluepurple!50}
+
+\setbeamercolor*{frametitle}{use=structure,fg=cream,bg=structure.fg!80}
+\setbeamercolor*{background canvas}{bg=cream}
+
+\setbeamercolor*{block title}{bg=structure.fg!90, fg=cream}
